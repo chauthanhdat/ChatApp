@@ -1,0 +1,10 @@
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\bin\Release\ChatApp.exe.config
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\bin\Release\ChatApp.exe
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\bin\Release\ChatApp.pdb
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.LoginForm.resources
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.Properties.Resources.resources
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.csproj.GenerateResource.cache
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.exe
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.pdb
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.Chat.resources
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.csprojAssemblyReference.cache

@@ -8,3 +8,9 @@ C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.exe
 C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.pdb
 C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.Chat.resources
 C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.csprojAssemblyReference.cache
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\bin\Release\MySql.Data.dll
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\bin\Release\Google.Protobuf.dll
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\bin\Release\BouncyCastle.Crypto.dll
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\bin\Release\Renci.SshNet.dll
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\bin\Release\MySql.Data.xml
+C:\Users\datch\OneDrive\Desktop\ChatApp\ChatApp\ChatApp\obj\Release\ChatApp.csproj.CopyComplete

@@ -80,10 +80,12 @@ namespace ChatApp
         Thread thread;
         private void login_Button_Click(object sender, EventArgs e)
         {
-            this.Close();
-            thread = new Thread(openChat);
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
+            Database database = new Database();
+            database.OpenConnection();
+            //this.Close();
+            //thread = new Thread(openChat);
+            //thread.SetApartmentState(ApartmentState.STA);
+            //thread.Start();
         }
 
         private void openChat(object obj)

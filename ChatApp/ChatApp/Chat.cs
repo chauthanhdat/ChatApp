@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,9 +14,16 @@ namespace ChatApp
 {
     public partial class Chat : Form
     {
+        private  string username;
         public Chat()
         {
             InitializeComponent();
+        }
+
+        public Chat(string _username)
+        {
+            InitializeComponent();
+            username = _username;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -55,6 +63,40 @@ namespace ChatApp
             {
                 label5.Text = openFileDialog.FileName;
             }
+        }
+
+        private void Chat_Load(object sender, EventArgs e)
+        {
+            Database database = new Database();
+            yourName.Text = database.Select(username);
+        }
+
+        Thread thread;
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default["username"] = "";
+            Close();
+            thread = new Thread(openLogin);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+        }
+
+        private void openLogin(object sender)
+        {
+            Application.Run(new LoginForm());
+        }
+
+        int x = 95;
+        int y = 220;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            y += 80;
+            Label label = new Label();
+            label.Text = "a";
+            label.Location = new Point(x, y);
+
+            this.chat_Panel.Controls.Add(label);
         }
     }
 }

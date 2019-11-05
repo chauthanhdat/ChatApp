@@ -32,7 +32,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.close_PictureBox = new System.Windows.Forms.PictureBox();
+            this.logout_PictureBox = new System.Windows.Forms.PictureBox();
+            this.friend_Panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,42 +42,37 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.chat_Panel = new System.Windows.Forms.Panel();
+            this.friend = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.roomName_Label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.yourName = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.chat_Panel = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logout_PictureBox)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.chat_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.friend)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.chat_Panel.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -99,7 +96,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel5, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.friend_Panel, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -112,23 +109,45 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(151)))), ((int)(((byte)(177)))));
-            this.panel3.Controls.Add(this.pictureBox8);
+            this.panel3.Controls.Add(this.close_PictureBox);
+            this.panel3.Controls.Add(this.logout_PictureBox);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(244, 72);
             this.panel3.TabIndex = 0;
             // 
-            // pictureBox8
+            // close_PictureBox
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(3, 11);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(56, 56);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 8;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.close_PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("close_PictureBox.Image")));
+            this.close_PictureBox.Location = new System.Drawing.Point(3, 11);
+            this.close_PictureBox.Name = "close_PictureBox";
+            this.close_PictureBox.Size = new System.Drawing.Size(56, 56);
+            this.close_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.close_PictureBox.TabIndex = 9;
+            this.close_PictureBox.TabStop = false;
+            this.close_PictureBox.Click += new System.EventHandler(this.close_PictureBox_Click);
+            // 
+            // logout_PictureBox
+            // 
+            this.logout_PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logout_PictureBox.Image")));
+            this.logout_PictureBox.Location = new System.Drawing.Point(65, 11);
+            this.logout_PictureBox.Name = "logout_PictureBox";
+            this.logout_PictureBox.Size = new System.Drawing.Size(56, 56);
+            this.logout_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logout_PictureBox.TabIndex = 8;
+            this.logout_PictureBox.TabStop = false;
+            this.logout_PictureBox.Visible = false;
+            this.logout_PictureBox.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // friend_Panel
+            // 
+            this.friend_Panel.AutoScroll = true;
+            this.friend_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.friend_Panel.Location = new System.Drawing.Point(3, 81);
+            this.friend_Panel.Name = "friend_Panel";
+            this.friend_Panel.Size = new System.Drawing.Size(244, 639);
+            this.friend_Panel.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -229,12 +248,31 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // chat_Panel
+            // 
+            this.chat_Panel.AutoScroll = true;
+            this.chat_Panel.Controls.Add(this.friend);
+            this.chat_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chat_Panel.Location = new System.Drawing.Point(3, 3);
+            this.chat_Panel.Name = "chat_Panel";
+            this.chat_Panel.Size = new System.Drawing.Size(527, 496);
+            this.chat_Panel.TabIndex = 1;
+            // 
+            // friend
+            // 
+            this.friend.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.friend.Location = new System.Drawing.Point(319, 169);
+            this.friend.Name = "friend";
+            this.friend.Size = new System.Drawing.Size(130, 101);
+            this.friend.TabIndex = 5;
+            this.friend.Visible = false;
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(151)))), ((int)(((byte)(177)))));
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(542, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -244,37 +282,61 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(195, 569);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(57)))), ((int)(((byte)(108)))));
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.panel4, 0, 1);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(189, 142);
+            this.tableLayoutPanel8.TabIndex = 0;
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(57)))), ((int)(((byte)(108)))));
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 142);
+            this.panel1.Size = new System.Drawing.Size(183, 65);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(69, 23);
+            this.pictureBox6.Location = new System.Drawing.Point(66, 7);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(56, 56);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
             // 
-            // label1
+            // panel4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Group Name";
+            this.panel4.Controls.Add(this.roomName_Label);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 74);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(183, 65);
+            this.panel4.TabIndex = 1;
+            // 
+            // roomName_Label
+            // 
+            this.roomName_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roomName_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomName_Label.ForeColor = System.Drawing.Color.White;
+            this.roomName_Label.Location = new System.Drawing.Point(0, 0);
+            this.roomName_Label.Name = "roomName_Label";
+            this.roomName_Label.Size = new System.Drawing.Size(183, 65);
+            this.roomName_Label.TabIndex = 8;
+            this.roomName_Label.Text = "Room Name";
+            this.roomName_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -286,11 +348,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(740, 136);
             this.panel2.TabIndex = 1;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(39, 21);
+            this.pictureBox7.Location = new System.Drawing.Point(9, 21);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(100, 100);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -302,112 +367,11 @@
             this.yourName.AutoSize = true;
             this.yourName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yourName.ForeColor = System.Drawing.Color.White;
-            this.yourName.Location = new System.Drawing.Point(168, 59);
+            this.yourName.Location = new System.Drawing.Point(115, 59);
             this.yourName.Name = "yourName";
-            this.yourName.Size = new System.Drawing.Size(133, 25);
+            this.yourName.Size = new System.Drawing.Size(119, 25);
             this.yourName.TabIndex = 1;
-            this.yourName.Text = "Group Name";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(33, 104);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(56, 56);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(151)))), ((int)(((byte)(177)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(95, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 25);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Hello !";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(31)))), ((int)(((byte)(75)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(95, 54);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Hello !";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(31)))), ((int)(((byte)(75)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(95, 220);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Hello !";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(33, 189);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(56, 56);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(33, 23);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(56, 56);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
-            // chat_Panel
-            // 
-            this.chat_Panel.AutoScroll = true;
-            this.chat_Panel.Controls.Add(this.label5);
-            this.chat_Panel.Controls.Add(this.label4);
-            this.chat_Panel.Controls.Add(this.pictureBox4);
-            this.chat_Panel.Controls.Add(this.label6);
-            this.chat_Panel.Controls.Add(this.pictureBox5);
-            this.chat_Panel.Controls.Add(this.pictureBox3);
-            this.chat_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chat_Panel.Location = new System.Drawing.Point(3, 3);
-            this.chat_Panel.Name = "chat_Panel";
-            this.chat_Panel.Size = new System.Drawing.Size(527, 496);
-            this.chat_Panel.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 81);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(244, 639);
-            this.panel5.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(36, 219);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 105);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "TEST";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.yourName.Text = "Your Name";
             // 
             // Chat
             // 
@@ -416,7 +380,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(205)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Chat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -425,26 +389,24 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logout_PictureBox)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.chat_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.friend)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.chat_Panel.ResumeLayout(false);
-            this.chat_Panel.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -460,23 +422,20 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label yourName;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox logout_PictureBox;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel chat_Panel;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel friend_Panel;
+        private System.Windows.Forms.PictureBox close_PictureBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label roomName_Label;
+        private System.Windows.Forms.DataGridView friend;
     }
 }

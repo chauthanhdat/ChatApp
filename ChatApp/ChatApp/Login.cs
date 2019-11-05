@@ -92,20 +92,7 @@ namespace ChatApp
         Thread thread;
         private void login_Button_Click(object sender, EventArgs e)
         {
-            Database database = new Database();
-            if (database.Login(username_TextBox.Text, password_TextBox.Text))
-            {
-                Properties.Settings.Default["username"] = username_TextBox.Text;
-                Close();
-                thread = new Thread(openChat);
-                thread.SetApartmentState(ApartmentState.STA);
-                thread.Start();
-            }
-            else
-            {
-                MessageBox.Show("Wrong Username/Password");
-            }
-            
+            Login();
         }
 
         private void openChat(object sender)
@@ -144,6 +131,31 @@ namespace ChatApp
         {
             Register register = new Register();
             register.ShowDialog();
+        }
+
+        private void password_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+            }
+        }
+
+        private void Login()
+        {
+            Database database = new Database();
+            if (database.Login(username_TextBox.Text, password_TextBox.Text))
+            {
+                Properties.Settings.Default["username"] = username_TextBox.Text;
+                Close();
+                thread = new Thread(openChat);
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
+            }
+            else
+            {
+                MessageBox.Show("Wrong Username/Password");
+            }
         }
     }
 }

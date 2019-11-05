@@ -65,6 +65,7 @@
             this.password_TextBox.TabIndex = 4;
             this.password_TextBox.Text = "Password";
             this.password_TextBox.Enter += new System.EventHandler(this.password_TextBox_Enter);
+            this.password_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_TextBox_KeyDown);
             this.password_TextBox.Leave += new System.EventHandler(this.password_TextBox_Leave);
             // 
             // login_Button

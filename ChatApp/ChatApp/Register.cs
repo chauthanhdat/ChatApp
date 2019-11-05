@@ -136,7 +136,17 @@ namespace ChatApp
 
         private void OK_Button_Click(object sender, EventArgs e)
         {
-            Close();
+            if (password_TextBox.Text != confirmPassword_TextBox.Text)
+            {
+                MessageBox.Show("Password does not match");
+            }
+            else
+            {
+                Database database = new Database();
+                database.Insert("account (username, password, name)", "('" + username_TextBox.Text + "', '" + password_TextBox.Text + "', '" + fullName_TextBox.Text + "')");
+                MessageBox.Show("Success");
+                Close();
+            }
         }
     }
 }

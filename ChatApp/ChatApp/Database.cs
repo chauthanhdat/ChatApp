@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace ChatApp
@@ -98,10 +98,11 @@ namespace ChatApp
                 return false;
         }
 
-        public string Select(string username)
+        public string Select(string a, string table, string c, string d)
         {
+            string query = "SELECT " + a + " FROM " + table + " WHERE " + c + "='" + d + "'";
+
             string t = "None";
-            string query = "SELECT name FROM account WHERE username='" + username + "'";
             if (this.OpenConnection())
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -115,6 +116,45 @@ namespace ChatApp
                 return t;
             }
             return t;
+        }
+
+        public void SelectTable(ref DataGridView dataGridView)
+        {
+            string query = "SELECT username, name FROM account";
+            if (this.OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
+                mySqlDataAdapter.SelectCommand = cmd;
+                DataTable dataTable = new DataTable();
+                mySqlDataAdapter.Fill(dataTable);
+                dataGridView.DataSource = dataTable;
+                this.CloseConnection();
+            }
+        }
+
+        public void Insert(string table, string values)
+        {
+            string query = "INSERT INTO " + table + " VALUES " + values;
+
+            if (this.OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+        }
+
+        public void Update(string a, string b, string c, string d, string e)
+        {
+            string query = "UPDATE " + a + " SET " + b + "='" + c + "' WHERE " + d + "='" + e + "'";
+
+            if (this.OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
         }
     }
 }

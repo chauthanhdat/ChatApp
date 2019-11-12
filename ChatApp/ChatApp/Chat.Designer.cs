@@ -137,7 +137,6 @@
             this.logout_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logout_PictureBox.TabIndex = 8;
             this.logout_PictureBox.TabStop = false;
-            this.logout_PictureBox.Visible = false;
             this.logout_PictureBox.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // friend_Panel
@@ -381,6 +380,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Chat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

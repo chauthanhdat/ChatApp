@@ -23,11 +23,6 @@ namespace ChatApp
             InitializeComponent();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Close();
@@ -151,10 +146,6 @@ namespace ChatApp
                 thread = new Thread(openChat);
                 thread.SetApartmentState(ApartmentState.STA);
                 thread.Start();
-            }
-            else
-            {
-                MessageBox.Show("Wrong Username/Password");
             }
         }
     }

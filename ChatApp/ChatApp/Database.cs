@@ -46,11 +46,11 @@ namespace ChatApp
                 switch (e.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
-                        break;
+                        MessageBox.Show("Cannot connect to server. Contact administrator");
+                        return false;
                     case 1045:
                         MessageBox.Show("Invalid username/password, please try again");
-                        break;
+                        return false;
                 }
                 return false;
             }
@@ -74,7 +74,7 @@ namespace ChatApp
         {
             string query = "SELECT * FROM account WHERE username='" + a + "' AND password='" + b + "'";
 
-            if (this.OpenConnection() == true)
+            if (this.OpenConnection())
             {
                 DataTable table = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -91,11 +91,16 @@ namespace ChatApp
                 }
                 else
                 {
+                    MessageBox.Show("Wrong Username/Password");
                     return false;
                 }
             }
             else
+            {
+                MessageBox.Show("Wrong Username/Password");
                 return false;
+
+            }
         }
 
         public string Select(string a, string table, string c, string d)

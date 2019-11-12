@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -38,15 +39,12 @@ namespace ChatApp
         Database database = new Database();
 
         private string username;
-        public Chat()
-        {
-            InitializeComponent();
-        }
 
         public Chat(string _username)
         {
             InitializeComponent();
             username = _username;
+            //Control.CheckForIllegalCrossThreadCalls = false;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -85,11 +83,12 @@ namespace ChatApp
                     Int32.TryParse(database.Select("port", "account", "username", currentChat), out port);
                     tcpClient = new TcpClient(hostname,port);
                     NetworkStream ns = tcpClient.GetStream();
-                    byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(richTextBox1.Text);
-                    ns.Write(bytesToSend, 0, bytesToSend.Length);
+                    byte[] buffer = Encoding.UTF8.GetBytes(richTextBox1.Text);
+                    ns.Write(buffer, 0, buffer.Length);
+                    ns.Close();
                     tcpClient.Close();
 
-                    //UI
+                    // New Message to UI
                     Label label = new Label();
                     label.Text = richTextBox1.Text;
                     richTextBox1.Text = "";
@@ -98,7 +97,7 @@ namespace ChatApp
                     label.AutoSize = true;
                     label.Font = new Font(label.Font.FontFamily, 15);
                     y += 62;
-                    this.chat_Panel.Controls.Add(label);
+                    chat_Panel.Controls.Add(label);
 
                     //int change = chat_Panel.VerticalScroll.Value + chat_Panel.VerticalScroll.SmallChange * 80;
                     //chat_Panel.AutoScrollPosition = new Point(0, change);
@@ -123,7 +122,38 @@ namespace ChatApp
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                //label4.Text = openFileDialog.FileName;
+                string hostname = database.Select("ip", "account", "username", currentChat);
+
+                if (hostname == "")
+                {
+                    MessageBox.Show("Offline");
+                    richTextBox1.Text = "";
+                }
+                else
+                {
+                    string directory = openFileDialog.FileName;
+                    string fileName = Path.GetFileName(directory);
+
+                    int port = 0;
+                    Int32.TryParse(database.Select("port", "account", "username", currentChat), out port);
+                    tcpClient = new TcpClient(hostname, port);
+                    NetworkStream ns = tcpClient.GetStream();
+                    byte[] file = File.ReadAllBytes(directory);
+                    byte[] fileBuffer = new byte[file.Length];
+                    ns.Write(file.ToArray(), 0, fileBuffer.GetLength(0));
+                    ns.Close();
+                    tcpClient.Close();
+
+                    // New Message to UI
+                    Label label = new Label();
+                    label.Text = fileName;
+                    label.Location = new Point(x + 62, y + 31);
+                    label.BackColor = Color.FromArgb(100, 151, 177);
+                    label.AutoSize = true;
+                    label.Font = new Font(label.Font.FontFamily, 15);
+                    y += 62;
+                    chat_Panel.Controls.Add(label);
+                }
             }
         }
 
@@ -167,9 +197,6 @@ namespace ChatApp
 
             // socket
             StartServer();
-
-            // get ip, port
-            database.Update("account", "ip", getIP().ToString(), "username", username);
         }
 
         private void click(object sender, EventArgs e)
@@ -193,7 +220,8 @@ namespace ChatApp
 
         private void StartServer()
         {
-            serverThread = new Thread(new ThreadStart(StartListen));
+            serverThread = new Thread(StartListen);
+            serverThread.IsBackground = true;
             serverThread.Start();
         }
 
@@ -202,22 +230,17 @@ namespace ChatApp
             tcpServer = new TcpListener(getIP(), 0);
             tcpServer.Start();
 
-            database.Update("account", "port", ((IPEndPoint)tcpServer.LocalEndpoint).Port.ToString(), "username", username); // problem is here
+            // get ip, port
+            database.Update("account", "ip", getIP().ToString(), "username", username);
+            database.Update("account", "port", ((IPEndPoint)tcpServer.LocalEndpoint).Port.ToString(), "username", username);
 
             while (true)
             {
-                //---incoming client connected---
                 TcpClient client = tcpServer.AcceptTcpClient();
-
-                //---get the incoming data through a network stream---
                 NetworkStream ns = client.GetStream();
                 byte[] buffer = new byte[client.ReceiveBufferSize];
-
-                //---read incoming stream---
                 int bytesRead = ns.Read(buffer, 0, client.ReceiveBufferSize);
-
-                //---convert the data received into a string---
-                string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                string dataReceived = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                 SetText(dataReceived);
             }
         }
@@ -253,8 +276,8 @@ namespace ChatApp
         {
             if (tcpServer != null)
             {
-                serverThread.Abort();
                 tcpServer.Stop();
+                serverThread.Abort();
             }
         }
 
